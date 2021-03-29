@@ -6,14 +6,14 @@
 
 <script>
 import Typed from 'typed.js'
-import { props, getEventHandlers } from '../config/typed-component.config'
+import { getEventHandlers, props } from '../config/typed-component.config'
 
 export default {
   name: 'vue-typed-js',
   props,
   data () {
     return {
-      typedObj: null,
+      typedObj: null
     }
   },
   methods: {
@@ -30,18 +30,18 @@ export default {
         typedConfig = getEventHandlers(this, typedConfig)
         this.typedObj = new Typed($typed, typedConfig)
       }
-    },
+    }
   },
   mounted () {
     this.initTypedJS()
   },
   destroyed () {
     this.typedObj.destroy()
-  },
+  }
 }
 </script>
 
-<style lang="scss">
+<style lang="stylus">
 .typed-element {
   display: flex;
   align-items: center;
@@ -52,7 +52,9 @@ export default {
   }
 }
 
-@keyframes typedjsBlink{
-  50% { opacity: 0.0; }
+@keyframes typedjsBlink {
+  50% {
+    opacity: 0.0;
+  }
 }
 </style>
